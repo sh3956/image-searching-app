@@ -9,7 +9,7 @@
 <body>
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron heading">Simple Image Search Engine</h1>
+            <h1 class="jumbotron heading">Similar Image Searching Tool</h1>
 
             <div class="text-center">
                 <img src="/Users/Renaissance/Desktop/sde/image_searching_app/image_searching_app/static/search_logo.png"
@@ -24,15 +24,18 @@
             <form method="POST" enctype="multipart/form-data">
                 <div>
                     <input class="form-control form-control-lg" id="image1" name="query_img" type="file">
+                    <br>
+                    <input class="btn btn-secondary btn-lg" type="submit" value="Submit">
                 </div>
             </form>
 
     </section>
 
-    <h2>Query:</h2>
+    <h2>Given Image:</h2>
     {% if query_path %}
     <img src="{{ query_path }}" width="300px">
     {% endif %}
+
     <h2>Results:</h2>
     {% for score in scores %}
     <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
