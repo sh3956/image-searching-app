@@ -9,7 +9,7 @@ class FeatureExtractor:
     """
     def __init__(self):
         VGG_model = VGG16(weights='imagenet')
-        self.model = Model(inputs=VGG_model.input, outputs=base_model.get_layer('fc1').output)
+        self.model = Model(inputs=VGG_model.input, outputs=VGG_model.get_layer('fc1').output)
     
     def extract(self, img):
         """
