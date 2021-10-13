@@ -1,2 +1,6 @@
 # OS dependent file
 .DS_Store
+
+# images
+static/feature/*.npy
+static/uploaded/*.jpg

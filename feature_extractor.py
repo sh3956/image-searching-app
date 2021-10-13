@@ -18,7 +18,6 @@ class FeatureExtractor:
             img: from PIL.Image.open(path) or tensorflow.keras.preprocessing.image.load_img(path)
         """
         img = img.resize((224, 224))
-        img = img.convert_to("RGB")
 
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
