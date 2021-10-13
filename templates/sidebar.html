@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="style" href="side.css">
+    <title> Smart Search</title>
+    <link rel=icon href=static/header_img.png>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container">
+            <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger full medium black-text">
+                <span>&#128062 Explore Features</span>
+            </a>
+        </div>
+
+        <ul id="nav-mobile" class="sidenav z-depth-2">
+            <br>
+            <li class="brand-logo center"><img src="static/header_img.jpg" height="45%" width="45%" /></li>
+            <hr>
+            <li class="bold"><a href="{{ url_for('index') }}" class="collapsible-header waves-effect"><i
+                        class="material-icons">home</i>Home </a></li>
+            <li class="bold">
+                <class="collapsible-header waves-effect"><i class="material-icons">search</i> Image
+                    Search</a>
+            </li>
+            <li class="bold">
+                <class="collapsible-header waves-effect"><i class="material-icons">folder</i> Database</a>
+            </li>
+            <li class="bold">
+                <class="collapsible-header waves-effect"><i class="material-icons">remove_red_eye</i> Caption it!</a>
+            </li>
+            <hr>
+            <li class="bold center"> Made by <b>Sijia Hua &#128062</b></li>
+        </ul>
+        <br><br>
+        {% block content %}{% endblock %}
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        M.AutoInit()
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+
+</html>
