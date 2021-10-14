@@ -1,14 +1,19 @@
+import os
+import glob
 from pathlib import Path
 from datetime import datetime
 
 import numpy as np
 from PIL import Image
-from flask import Flask, request, render_template
+from flask import Blueprint, request, render_template, flash
+from flask_login import login_required, current_user
 
+from __init__ import create_app, db
 from feature_extractor import FeatureExtractor
 
 
-app = Flask(__name__)
+main = Blueprint('main', __name__)
+folder_path = Path("./static") / ("uploaded")
 
 # Read image features
 fe = FeatureExtractor()
@@ -19,9 +24,13 @@ for feature_path in Path("./static/feature").glob("*.npy"):
     img_paths.append(Path("./static/img") / (feature_path.stem + ".jpg"))
 features = np.array(features)
 
-
-@app.route('/', methods=['GET', 'POST'])
+@main.route('/') # home page that return 'index'
 def index():
+    return render_template('index.html')
+
+@main.route('/search', methods=['GET', 'POST'])
+@login_required
+def search():
     if request.method == 'POST':
         file = request.files['query_img']
 
@@ -42,6 +51,14 @@ def index():
     else:
         return render_template('home.html')
 
+@main.route('/database')
+def database():
+    images = glob.glob(os.path.join(folder_path, '*'))
+    return render_template('database.html', database_images=images)
 
-if __name__=="__main__":
-    app.run(port=5050, debug=True)
+
+app = create_app() 
+
+if __name__ == '__main__':
+    db.create_all(app=create_app())
+    app.run(port=5050, debug=True) 

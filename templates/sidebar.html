@@ -23,18 +23,20 @@
         </div>
         <ul id="nav-mobile" class="sidenav z-depth-2">
             <li class="brand-logo center"><img src="static/header_img.jpg" height="45%" width="45%" /></li>
+            <p>Hi!</p>
             <hr>
-            <li class="bold"><a href="{{ url_for('index') }}" class="collapsible-header waves-effect"><i
-                        class="material-icons">home</i>Home </a></li>
             <li class="bold">
-                <class="collapsible-header waves-effect"><i class="material-icons">search</i> Image
+                <a href="{{ url_for('main.index') }}" class="collapsible-header waves-effect"><i
+                        class="material-icons">home</i>Home & Logout </a>
+            </li>
+            <li class="bold">
+                <a href="{{ url_for('main.search') }}" class="collapsible-header waves-effect"><i
+                        class="material-icons">search</i> Image
                     Search</a>
             </li>
             <li class="bold">
-                <class="collapsible-header waves-effect"><i class="material-icons">folder</i> Database</a>
-            </li>
-            <li class="bold">
-                <class="collapsible-header waves-effect"><i class="material-icons">remove_red_eye</i> Caption it!</a>
+                <a href="{{ url_for('main.database') }}" class="collapsible-header waves-effect"><i
+                        class="material-icons">folder</i> Database</a>
             </li>
             <hr>
             <li class="bold center"> Made by <b>Sijia Hua &#128062</b></li>
