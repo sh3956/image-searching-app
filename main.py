@@ -9,7 +9,7 @@ from flask import Blueprint, request, render_template, flash
 from flask_login import login_required, current_user
 
 from __init__ import create_app, db
-from feature_extractor import FeatureExtractor
+from src.features.feature_extractor import FeatureExtractor
 
 
 main = Blueprint('main', __name__)
