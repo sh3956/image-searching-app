@@ -1,6 +1,9 @@
 # OS dependent file
 .DS_Store
 
+# Databse file
+db.sqlite3
+
 # images
 static/feature/*.npy
 static/uploaded/*.jpg
