@@ -4,6 +4,14 @@
 
 This is an image searching web app. Use pretrained VGG16 to extract feature space of images.
 
+## Demo
+
+### Sign Up 
+![Sign up](static/gif_login.gif)
+
+### Search
+![search](static/gif_search.gif)
+
 ## Built With
 
 * Flask
